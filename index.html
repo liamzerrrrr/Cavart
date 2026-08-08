@@ -1426,6 +1426,7 @@
 <script type="module">
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1669,7 +1670,16 @@ function adoptModel(object){
 
 setProgress(0.06);
 
-new GLTFLoader().load(
+/* Le modèle est compressé (géométrie Draco, textures WebP) : le décodeur
+   Draco est chargé à la demande. En cas d'échec, le chargement échoue
+   proprement et la sculpture de repli prend le relais. */
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://unpkg.com/three@0.160.0/examples/jsm/libs/draco/gltf/');
+
+const gltfLoader = new GLTFLoader();
+gltfLoader.setDRACOLoader(dracoLoader);
+
+gltfLoader.load(
   './crampon.glb',
   (gltf) => adoptModel(gltf.scene),
   (evt) => {
@@ -1872,6 +1882,7 @@ window.addEventListener('resize', () => {
 }, { passive: true });
 
 window.addEventListener('beforeunload', () => {
+  dracoLoader.dispose();
   pmrem.dispose();
   renderer.dispose();
 });
