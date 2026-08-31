@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Expositions | CAVART — Julian Cavaillé</title>
+<meta name="description" content="Expositions en cours, à venir et passées de Cavart : galeries, hôtels, fondations, événements et lieux d'exception." />
+<meta name="theme-color" content="#000000" />
+<link rel="canonical" href="https://www.cavart.com/expositions.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="CAVART" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Expositions | CAVART — Julian Cavaillé" />
+<meta property="og:description" content="Expositions en cours, à venir et passées de Cavart : galeries, hôtels, fondations, événements et lieux d'exception." />
+<meta property="og:url" content="https://www.cavart.com/expositions.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+  .expo-filters{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:36px; }
+  .expo-filters button{
+    background:none; border:1px solid var(--line); color:var(--mute);
+    font-size:9.5px; letter-spacing:.26em; text-transform:uppercase;
+    padding:11px 18px; cursor:pointer;
+    transition:color .4s var(--ease), border-color .4s var(--ease);
+  }
+  .expo-filters button:hover{ color:var(--white); }
+  .expo-filters button.is-on{ color:#0a0a0a; background:var(--gold); border-color:var(--gold); }
+  .expo{
+    display:grid; grid-template-columns:140px minmax(0,1fr) auto;
+    gap:clamp(16px,3vw,44px); align-items:baseline;
+    padding:28px 0; border-top:1px solid var(--line);
+  }
+  .expo[hidden]{ display:none; }
+  .expo .when{ font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); }
+  .expo h3{ font-size:clamp(20px,2.2vw,28px); margin:0 0 8px; }
+  .expo p{ margin:0; font-size:12.5px; line-height:1.75; color:var(--mute); max-width:58ch; }
+  .expo .lieu{ display:block; margin-top:12px; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--faint); }
+  .expo .statut{
+    font-size:9px; letter-spacing:.24em; text-transform:uppercase;
+    color:var(--faint); border:1px solid var(--line); padding:6px 12px; white-space:nowrap;
+  }
+  @media (max-width:768px){
+    .expo{ grid-template-columns:1fr; gap:10px; padding:22px 0; }
+    .expo .statut{ justify-self:start; }
+  }
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23c9a227' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+</head>
+
+<body class="inner">
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<div id="grain" aria-hidden="true"></div>
+<div id="grid" aria-hidden="true">
+  <div class="col"><span class="dot"></span></div>
+  <div class="col"><span class="dot"></span></div>
+  <div class="col"><span class="dot"></span></div>
+  <div class="col"><span class="dot"></span></div>
+  <div class="col"><span class="dot"></span></div>
+</div>
+
+<div class="cursor" id="cursor-ring" aria-hidden="true"></div>
+<div class="cursor" id="cursor-dot" aria-hidden="true"></div>
+
+<header class="site-header" id="site-header">
+  <a class="brand" href="index.html">CAVART<small>Julian Cavaillé</small></a>
+
+  <nav class="nav" id="nav" aria-label="Navigation principale">
+    <a href="artiste.html">L'Artiste</a>
+    <a href="oeuvres.html">Œuvres</a>
+    <a href="collaborations.html">Collaborations</a>
+    <a href="expositions.html">Expositions</a>
+    <a href="lab.html">Cavart Lab</a>
+  </nav>
+
+  <div class="header-actions">
+    <button class="btn-contact" data-open-modal><span>Contact</span></button>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="page-head">
+    <span class="eyebrow">04 — Expositions</span>
+    <h1>Expositions</h1>
+    <p class="lede">La présence physique de Cavart : galeries, hôtels, fondations, événements et lieux d'exception. Les expositions passées ne sont jamais supprimées — elles sont archivées.</p>
+  </section>
+
+  <section class="section">
+    <div class="expo-filters reveal" role="group" aria-label="Filtrer les expositions">
+      <button class="is-on" data-filter="all">Toutes</button>
+      <button data-filter="now">En cours</button>
+      <button data-filter="next">À venir</button>
+      <button data-filter="past">Passées</button>
+    </div>
+
+    <div id="expo-list">
+      <!-- EXPOSITION — dupliquez ce bloc. data-state : now, next ou past -->
+      <article class="expo reveal" data-state="now">
+        <span class="when">En ce moment</span>
+        <div>
+          <h3>Lieu d'exception — accrochage</h3>
+          <p>Une sélection d'œuvres présentée dans un espace privé, en dialogue avec l'architecture du lieu.</p>
+          <span class="lieu">Lieu, ville et dates à renseigner</span>
+        </div>
+        <span class="statut" style="color:var(--gold); border-color:rgba(201,162,39,.45)">En cours</span>
+      </article>
+      <!-- EXPOSITION — dupliquez ce bloc. data-state : now, next ou past -->
+      <article class="expo reveal" data-state="next">
+        <span class="when">Prochainement</span>
+        <div>
+          <h3>Galerie — exposition personnelle</h3>
+          <p>Un accrochage dédié au travail de Julian Cavaillé, autour des pièces iconiques du studio.</p>
+          <span class="lieu">Lieu, ville et dates à renseigner</span>
+        </div>
+        <span class="statut">À venir</span>
+      </article>
+      <!-- EXPOSITION — dupliquez ce bloc. data-state : now, next ou past -->
+      <article class="expo reveal" data-state="past">
+        <span class="when">Archives</span>
+        <div>
+          <h3>Hôtel — présentation d'œuvres</h3>
+          <p>Œuvres installées dans les espaces communs d'un établissement, visibles pendant toute la durée de l'accrochage.</p>
+          <span class="lieu">Lieu, ville et dates à renseigner</span>
+        </div>
+        <span class="statut">Passée</span>
+      </article>
+      <!-- EXPOSITION — dupliquez ce bloc. data-state : now, next ou past -->
+      <article class="expo reveal" data-state="past">
+        <span class="when">Archives</span>
+        <div>
+          <h3>Événement — pièce invitée</h3>
+          <p>Une sculpture présentée le temps d'un événement, documentée en photographie et en vidéo.</p>
+          <span class="lieu">Lieu, ville et dates à renseigner</span>
+        </div>
+        <span class="statut">Passée</span>
+      </article>
+    </div>
+  </section>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.expo-filters button');
+    var expos = document.querySelectorAll('#expo-list .expo');
+    for (var i = 0; i < buttons.length; i++){
+      buttons[i].addEventListener('click', function(){
+        for (var b = 0; b < buttons.length; b++) buttons[b].classList.remove('is-on');
+        this.classList.add('is-on');
+        var f = this.getAttribute('data-filter');
+        for (var e = 0; e < expos.length; e++){
+          var show = (f === 'all') || (expos[e].getAttribute('data-state') === f);
+          expos[e].hidden = !show;
+          if (show) expos[e].classList.add('is-in');
+        }
+      });
+    }
+  })();
+</script>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-top">
+    <div class="foot-brand">CAVART</div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="artiste.html">L'Artiste</a></li>
+          <li><a href="oeuvres.html">Œuvres</a></li>
+          <li><a href="collaborations.html">Collaborations</a></li>
+          <li><a href="expositions.html">Expositions</a></li>
+          <li><a href="lab.html">Cavart Lab</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Suivre</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/cavart_artiste/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="mailto:contact@cavart.com">contact@cavart.com</a></li>
+          <li><a href="contact.html">Formulaire de contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <span>© <span id="year">2026</span> Cavart — Julian Cavaillé. Tous droits réservés.</span>
+    <span>Sculpture contemporaine, sport &amp; culture populaire</span>
+  </div>
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
+    <span class="eyebrow">Cavart — Studio</span>
+    <h3 id="modal-title">Prendre contact</h3>
+    <p class="lede" style="font-size:12.5px; margin:0 0 30px">Collectionneurs, agents, galeries, lieux d'exposition, marques et partenaires. Chaque message est lu par Julian.</p>
+
+    <form data-contact novalidate data-endpoint="" data-mailto="contact@cavart.com">
+      <div class="field">
+        <label for="f-nom">Nom<span aria-hidden="true"> *</span></label>
+        <input type="text" id="f-nom" name="nom" required autocomplete="name" placeholder="Votre nom" />
+      </div>
+      <div class="field">
+        <label for="f-email">Adresse email<span aria-hidden="true"> *</span></label>
+        <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="vous@exemple.com" />
+      </div>
+      <div class="field">
+        <label for="f-motif">Motif</label>
+        <select id="f-motif" name="motif">
+          <option value="Œuvre">Œuvre</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Exposition">Exposition</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-tel">Téléphone (facultatif)</label>
+        <input type="tel" id="f-tel" name="telephone" autocomplete="tel" placeholder="+33" />
+      </div>
+      <div class="field">
+        <label for="f-message">Message<span aria-hidden="true"> *</span></label>
+        <textarea id="f-message" name="message" required rows="4" placeholder="Votre message"></textarea>
+      </div>
+
+      <input class="hp" type="text" name="societe_web" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <button type="submit" class="btn-submit">Envoyer</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="consent">Les informations transmises servent uniquement à répondre à votre demande et ne font l'objet d'aucune communication à des tiers. Voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+    </form>
+  </div>
+</div>
+
+<script src="assets/site.js"></script>
+
+</body>
+</html>
