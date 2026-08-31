@@ -32,7 +32,7 @@ puis rendez-vous sur `http://localhost:8000`.
 | `index.html` | Accueil, avec la séquence 3D au défilement |
 | `artiste.html` | L'Artiste |
 | `oeuvres.html` | Grille des œuvres |
-| `oeuvre-crampon-or.html` | Gabarit de page immersive d'une œuvre iconique |
+| `oeuvre-sneaker-or.html` | Gabarit de page immersive d'une œuvre iconique |
 | `collaborations.html` | Collaborations |
 | `expositions.html` | Expositions |
 | `lab.html` | Cavart Lab |
@@ -65,14 +65,14 @@ le bon nom : l'image apparaît, sans aucune modification du code.
 - `julian-atelier.jpg`
 
 **Œuvres** — dossier `images/oeuvres/`
-- `crampon-or.jpg`
-- `crampon-or-detail-1.jpg`
-- `crampon-or-detail-2.jpg`
-- `crampon-or-situation.jpg`
-- `bronze-terrain.jpg`
+- `sneaker-or.jpg`
+- `sneaker-or-detail-1.jpg`
+- `sneaker-or-detail-2.jpg`
+- `sneaker-or-situation.jpg`
+- `icone-parquet.jpg`
+- `mocassin-noir.jpg`
+- `silhouette-blanche.jpg`
 - `etude-semelle.jpg`
-- `icone-blanche.jpg`
-- `silhouette-04.jpg`
 - `piece-atelier.jpg`
 
 **Collaborations** — dossier `images/collaborations/`
@@ -125,8 +125,8 @@ de `card` et `style="grid-column:span 2"` sur la balise `<a>`.
 
 ## 5. Ajouter une page immersive d'œuvre
 
-Dupliquez le fichier `oeuvre-crampon-or.html`, renommez-le (par exemple
-`oeuvre-bronze-terrain.html`), puis modifiez le titre, le récit et les
+Dupliquez le fichier `oeuvre-sneaker-or.html`, renommez-le (par exemple
+`oeuvre-icone-parquet.html`), puis modifiez le titre, le récit et les
 images. Reliez-le ensuite depuis `oeuvres.html` en changeant l'adresse dans
 `href="..."` de la carte correspondante.
 
