@@ -58,19 +58,27 @@ fichier est absent, l'emplacement affiche un cadre sombre avec le nom
 attendu écrit en petit dans le coin. Déposez le fichier au bon endroit avec
 le bon nom : l'image apparaît, sans aucune modification du code.
 
-### Fichiers attendus
+### Déjà en place
 
-**Portraits** — dossier `images/artiste/`
-- `julian-portrait.jpg`
-- `julian-atelier.jpg`
+Six visuels ont été repris de votre compte Instagram, détourés de
+l'interface et optimisés :
+
+- `images/artiste/julian-portrait.jpg`
+- `images/artiste/julian-atelier.jpg`
+- `images/oeuvres/sneaker-or.jpg`
+- `images/oeuvres/sneaker-or-situation.jpg`
+- `images/oeuvres/icone-parquet.jpg`
+- `images/oeuvres/mocassin-noir.jpg`
+
+Ces images viennent de captures d'écran : elles conviennent pour valider la
+mise en page, mais restent en deçà de ce qu'un site galerie mérite.
+Remplacez-les par les fichiers d'origine dès que possible, en gardant
+exactement les mêmes noms.
+
+### Encore attendus
 
 **Œuvres** — dossier `images/oeuvres/`
-- `sneaker-or.jpg`
-- `sneaker-or-detail-1.jpg`
-- `sneaker-or-detail-2.jpg`
-- `sneaker-or-situation.jpg`
-- `icone-parquet.jpg`
-- `mocassin-noir.jpg`
+- `sneaker-or-detail-1.jpg`, `sneaker-or-detail-2.jpg` (vues de détail)
 - `silhouette-blanche.jpg`
 - `etude-semelle.jpg`
 - `piece-atelier.jpg`
@@ -86,6 +94,10 @@ le bon nom : l'image apparaît, sans aucune modification du code.
 
 **Vidéos** — dossier `videos/`
 - `lab-01.mp4` à `lab-04.mp4`
+
+Dix photographies supplémentaires attendent dans `_photos-a-valider/` :
+elles montrent des personnalités et demandent une validation des droits
+avant publication. Voir le fichier `LISEZ-MOI.md` de ce dossier.
 
 ### Conseils de format
 
