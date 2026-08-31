@@ -236,15 +236,15 @@ body.menu-open .burger i:nth-child(2){ transform:translateY(-4.5px) rotate(-45de
    ----------------------------------------------------------------- */
 main{ position:relative; z-index:12; }
 
-.section{ padding:clamp(88px,13vh,150px) var(--pad); position:relative; background:var(--black); }
+.section{ padding:clamp(60px,8.5vh,104px) var(--pad); position:relative; background:var(--black); }
 .section + .section{ border-top:1px solid var(--line); }
 .section-head{
   display:flex; align-items:baseline; gap:20px;
-  margin-bottom:clamp(34px,5vh,58px); flex-wrap:wrap;
+  margin-bottom:clamp(24px,3.4vh,40px); flex-wrap:wrap;
 }
 .section-head h2{ font-size:clamp(30px,4.6vw,62px); line-height:1.05; flex:1 1 auto; }
 .section-head .num{ font-size:10px; letter-spacing:.34em; color:var(--gold); padding-top:8px; }
-.section-intro{ margin:0 0 clamp(34px,5vh,58px); }
+.section-intro{ margin:0 0 clamp(26px,3.6vh,44px); }
 
 .section-link{
   display:inline-flex; align-items:center; gap:12px; margin-top:34px;
@@ -260,13 +260,13 @@ main{ position:relative; z-index:12; }
    Fond opaque comme les sections : sans cela la grille verticale fixe
    traverse ce bloc puis s'arrête net contre la section suivante. */
 .page-head{
-  padding:calc(var(--header-h) + clamp(60px,11vh,120px)) var(--pad) clamp(40px,6vh,70px);
+  padding:calc(var(--header-h) + clamp(44px,7.5vh,86px)) var(--pad) clamp(28px,4vh,48px);
   border-bottom:1px solid var(--line);
   background:var(--black); position:relative;
 }
 /* La grille reste la signature de la séquence d'ouverture */
 body.inner #grid{ display:none; }
-.page-head h1{ font-size:clamp(38px,6.5vw,88px); line-height:1.02; margin:18px 0 22px; }
+.page-head h1{ font-size:clamp(38px,6.5vw,88px); line-height:1.02; margin:14px 0 16px; }
 .page-head .lede{ max-width:64ch; }
 
 /* Apparitions au défilement */
@@ -518,7 +518,7 @@ body.inner #grid{ display:none; }
 
   #grid .col:nth-child(2), #grid .col:nth-child(4){ display:none; }
 
-  .section{ padding:66px 20px; }
+  .section{ padding:48px 20px; }
   .section-head h2{ font-size:clamp(27px,8.4vw,38px); }
   .page-head h1{ font-size:clamp(32px,10vw,46px); }
   .lede, .section-intro{ font-size:13.5px; line-height:1.85; }

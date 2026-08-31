@@ -44,6 +44,33 @@
   }
   watchImages();
 
+  /* Vidéos du Lab : les commandes n'apparaissent que si le fichier existe
+     réellement. Sans cela le navigateur affiche une barre de lecture vide
+     sur un cadre noir, ce qui donne l'impression d'un lecteur cassé. */
+  var films = document.querySelectorAll('.film video');
+  for (var f = 0; f < films.length; f++){
+    (function(v){
+      var cadre = v.closest ? v.closest('.film') : null;
+
+      function present(){
+        v.controls = true;
+        if (cadre) cadre.classList.remove('is-empty');
+      }
+      function absent(){
+        v.controls = false;
+        if (cadre) cadre.classList.add('is-empty');
+      }
+
+      v.addEventListener('loadedmetadata', present);
+      v.addEventListener('error', absent);
+
+      // L'erreur peut avoir été émise avant l'exécution de ce script :
+      // on interroge donc aussi l'état courant de l'élément.
+      if (v.error || v.networkState === 3) absent();          // NETWORK_NO_SOURCE
+      else if (v.readyState >= 1) present();                  // HAVE_METADATA
+    })(films[f]);
+  }
+
   /* ---------------------------------------------------------------
      2. Curseur double anneau (desktop uniquement)
      --------------------------------------------------------------- */

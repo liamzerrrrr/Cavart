@@ -32,6 +32,20 @@
     display:block; font-family:var(--serif); font-weight:400; font-size:21px;
     color:var(--white); margin-bottom:8px; letter-spacing:.02em;
   }
+  /* Emplacement en attente : même traitement que les images manquantes */
+  .film{ position:relative; }
+  .film.is-empty video{
+    background:
+      radial-gradient(130% 100% at 28% 16%, rgba(201,162,39,.20), transparent 58%),
+      linear-gradient(160deg, #1c1810 0%, #0d0d0f 52%, #050506 100%);
+  }
+  .film.is-empty::after{
+    content:attr(data-label);
+    position:absolute; top:12px; left:12px;
+    padding:6px 10px;
+    background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.08);
+    font-size:8.5px; letter-spacing:.12em; color:rgba(244,242,239,.42);
+  }
   @media (max-width:768px){ .lab-grid{ grid-template-columns:1fr; } }
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23c9a227' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
@@ -74,54 +88,45 @@
   <section class="page-head">
     <span class="eyebrow">05 — Cavart Lab</span>
     <h1>Cavart Lab</h1>
-    <p class="lede">Uniquement des vidéos de Julian au travail : dessiner, modéliser, assembler, peindre, finir. Un accès privilégié à l'atelier — ni démonstration technique, ni présentation de machines.</p>
+    <p class="lede">Julian au travail. Rien d'autre.</p>
   </section>
 
   <section class="section">
     <div class="lab-grid">
       <!-- VIDÉO — déposez le fichier .mp4 et l'image d'attente (poster) -->
-      <figure class="film reveal">
-        <video controls muted playsinline preload="none"
+      <figure class="film reveal" data-label="videos/lab-01.mp4">
+        <video muted playsinline preload="metadata"
                poster="images/lab/lab-01.jpg"
-               aria-label="Le dessin — Julian Cavaillé au travail">
-          <source src="videos/lab-01.mp4" type="video/mp4" />
-          Votre navigateur ne peut pas lire cette vidéo.
-        </video>
-        <figcaption><b>Le dessin</b>Les premières lignes d'une pièce, avant tout volume.</figcaption>
+               src="videos/lab-01.mp4"
+               aria-label="Le dessin — Julian Cavaillé au travail"></video>
+        <figcaption><b>Le dessin</b></figcaption>
       </figure>
       <!-- VIDÉO — déposez le fichier .mp4 et l'image d'attente (poster) -->
-      <figure class="film reveal">
-        <video controls muted playsinline preload="none"
+      <figure class="film reveal" data-label="videos/lab-02.mp4">
+        <video muted playsinline preload="metadata"
                poster="images/lab/lab-02.jpg"
-               aria-label="La modélisation — Julian Cavaillé au travail">
-          <source src="videos/lab-02.mp4" type="video/mp4" />
-          Votre navigateur ne peut pas lire cette vidéo.
-        </video>
-        <figcaption><b>La modélisation</b>La forme se construit en trois dimensions.</figcaption>
+               src="videos/lab-02.mp4"
+               aria-label="La modélisation — Julian Cavaillé au travail"></video>
+        <figcaption><b>La modélisation</b></figcaption>
       </figure>
       <!-- VIDÉO — déposez le fichier .mp4 et l'image d'attente (poster) -->
-      <figure class="film reveal">
-        <video controls muted playsinline preload="none"
+      <figure class="film reveal" data-label="videos/lab-03.mp4">
+        <video muted playsinline preload="metadata"
                poster="images/lab/lab-03.jpg"
-               aria-label="L'assemblage — Julian Cavaillé au travail">
-          <source src="videos/lab-03.mp4" type="video/mp4" />
-          Votre navigateur ne peut pas lire cette vidéo.
-        </video>
-        <figcaption><b>L'assemblage</b>Les éléments trouvent leur place, à la main.</figcaption>
+               src="videos/lab-03.mp4"
+               aria-label="L'assemblage — Julian Cavaillé au travail"></video>
+        <figcaption><b>L'assemblage</b></figcaption>
       </figure>
       <!-- VIDÉO — déposez le fichier .mp4 et l'image d'attente (poster) -->
-      <figure class="film reveal">
-        <video controls muted playsinline preload="none"
+      <figure class="film reveal" data-label="videos/lab-04.mp4">
+        <video muted playsinline preload="metadata"
                poster="images/lab/lab-04.jpg"
-               aria-label="La finition — Julian Cavaillé au travail">
-          <source src="videos/lab-04.mp4" type="video/mp4" />
-          Votre navigateur ne peut pas lire cette vidéo.
-        </video>
-        <figcaption><b>La finition</b>Ponçage, peinture, patine — l'œuvre apparaît.</figcaption>
+               src="videos/lab-04.mp4"
+               aria-label="La finition — Julian Cavaillé au travail"></video>
+        <figcaption><b>La finition</b></figcaption>
       </figure>
     </div>
 
-    <p class="note reveal">Lecture sans son automatique : le son s'active à la demande du visiteur. Déposez les fichiers vidéo dans le dossier <code>videos/</code> et leur image d'attente dans <code>images/lab/</code>.</p>
   </section>
 </main>
 
@@ -168,7 +173,7 @@
     <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
     <span class="eyebrow">Cavart — Studio</span>
     <h3 id="modal-title">Prendre contact</h3>
-    <p class="lede" style="font-size:12.5px; margin:0 0 30px">Collectionneurs, agents, galeries, lieux d'exposition, marques et partenaires. Chaque message est lu par Julian.</p>
+    <p class="lede" style="font-size:12.5px; margin:0 0 30px">Chaque message est lu par Julian.</p>
 
     <form data-contact novalidate data-endpoint="" data-mailto="contact@cavart.com">
       <div class="field">
